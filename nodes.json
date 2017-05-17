@@ -1,0 +1,33 @@
+{
+  "nodes": {
+    "puppet.example.com": {
+      ":box": "centos/7",
+      ":box_version": "1704.01",
+      ":ip": "192.168.32.10",
+      "ports": [
+        {
+          ":host": "8080",
+          ":guest": "8080",
+          ":id": "puppetdb"
+        }
+      ],
+      "synced_folders": [
+        {
+          ":hostpath": "code",
+          ":guestpath": "/etc/puppetlabs/code"
+        }
+      ],
+      ":memory": 2048,
+      ":aliases": "%w(puppet.example.com)"
+    },
+    "gitlab.example.com": {
+      ":box": "centos/7",
+      ":box_version": "1704.01",
+      ":ip": "192.168.32.10",
+      "ports": [],
+      "synced_folders": [],
+      ":memory": 2048,
+      ":aliases": "%w(gitlab.example.com)"
+    }
+  }
+}
